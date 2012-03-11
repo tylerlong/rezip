@@ -3,9 +3,15 @@ rezip
 =====
 Use different programming languages to accomplish the same task: rezip.
 
-Task Description
-****************
-- Let's call /root/source/ the source folder, there are files and folders inside the source folder. 
-- We are told that among the files, a lot of them are zip files. All of the files inside the zip files are html files and each of the html files is smaller than 500k.
-- Let's call /root/destination/ the destination folder, it's empty.
-- The task is: we want to rezip the html files, and put the new zip files into the destination folder. Each of the new zip files should be smaller than 500k.
+
+What we have
+************
+- We have two folders: the input folder and the output folder. 
+- There are a lot of folders and files in the input folder while the output folder is empty.
+
+
+What we want
+************
+- Find all of the zip files in the input folder recursively, adjust the size of the zip files to make each of them smaller than 500k. Put the final zip files into the output folder. 
+- The number of final zip files should be minimal, so you must try to make the zip files size as close to 500k as possible.
+- You are not required to preserve the old zip files' names. So you are allowed to create new zip files to replace the old ones
