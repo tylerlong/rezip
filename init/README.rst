@@ -1,4 +1,5 @@
 Prepare the folders and files for testing. What has to be done:
+
 - create the input folder if it doesn't exist
 - create the output folder if it doesn't exist
 - create ten folders inside input folder if they are not already there

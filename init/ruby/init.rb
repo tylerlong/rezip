@@ -1,3 +1,5 @@
+require "zip/zip"
+
 working_folder = "/home/tyler/Documents"
 
 if !Dir.exists?(working_folder)
@@ -21,6 +23,18 @@ end
     end
 end
 
-html_file = File.new("#{input_folder}/data.txt", "w")
+data_file = File.new("#{input_folder}/data.txt", "w")
 data = ([(["abc"] * 20).join(" ")] * rand(500)).join("\n")
-html_file.syswrite(data)
+data_file.syswrite(data)
+
+10.times do |i| #for every sub folder in input folder
+    sub_folder = "#{input_folder}/folder#{i}"
+    rand(100).times do |j| #for each zip file
+        zip_file = "#{sub_folder}/#{j}.zip"
+        Zip::ZipFile.open(zip_file, Zip::ZipFile::CREATE) do |zip_file|
+            rand(1000).times do |k| #for each data file inside a zip file
+                zip_file.add("#{k}.txt", data_file) 
+            end
+        end 
+    end
+end
